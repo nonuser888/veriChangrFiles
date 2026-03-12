@@ -1,6 +1,7 @@
 # Verify Changed Files
 
 Runs daily at 1am (via cron), hashes your important files, compares with stored hashes in **VerifyFile**, and sends a Telegram message listing any new or changed files.
+make sure all the paths are correct before running the script
 
 ## How it works
 
