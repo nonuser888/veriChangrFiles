@@ -1,7 +1,7 @@
 # Verify Changed Files
 
 Runs daily at 1am (via cron), hashes your important files, compares with stored hashes in **VerifyFile**, and sends a Telegram message listing any new or changed files.
-(make sure all the paths are correct before running the script)
+                              !!! make sure all the paths are correct before running the script !!!
 
 ## How it works
 
@@ -48,7 +48,7 @@ crontab -e
 Add this line (replace with your real path):
 
 ```
-0 1 * * * /home/yourUserName/program/veriChangedFiles/schedule_1am.sh
+0 1 * * * /home/path/to/veriChangedFiles/schedule_1am.sh
 ```
 
 Cron runs only when the system is on. If the laptop is suspended at 1am, the job runs when it next wakes (or use wake-from-suspend below).
@@ -59,7 +59,7 @@ If you prefer systemd, install a user service and timer:
 
 ```bash
 mkdir -p ~/.config/systemd/user
-# Copy and replace /home/yourUserName/program/veriChangedFiles with your actual path in the .service file
+# Copy and replace /home/path/to/veriChangedFiles with your actual path in the .service file
 cp verify-files.service.example ~/.config/systemd/user/verify-files.service
 cp verify-files.timer.example ~/.config/systemd/user/verify-files.timer
 # Edit verify-files.service and set your paths in ExecStart and WorkingDirectory
