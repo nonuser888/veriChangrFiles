@@ -1,0 +1,12 @@
+[Unit]
+Description=Verify important files and notify via Telegram
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /home/path_to_directory/veriChangedFiles/verify_files.py --config /home/path_to_directory/veriChangedFiles/config.json --verify-file /home/path_to_directory/veriChangedFiles/VerifyFile
+WorkingDirectory=/home/path_to_directory/veriChangedFiles
+
+[Install]
+WantedBy=default.target
